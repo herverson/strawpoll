@@ -7,6 +7,8 @@ defmodule StrawpollWeb.Router do
 
   scope "/api", StrawpollWeb do
     pipe_through :api
+
+    resources "/polls", PollController, except: [:new, :edit]
   end
 
   # Enables LiveDashboard only for development
