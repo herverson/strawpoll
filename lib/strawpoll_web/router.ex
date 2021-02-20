@@ -11,7 +11,7 @@ defmodule StrawpollWeb.Router do
     resources "/polls", PollController, except: [:new, :edit] do
       resources "/options", OptionController, except: [:new, :edit]
     end
-
+    post("/polls/:id/vote", VoteController, :create)
   end
 
   # Enables LiveDashboard only for development
